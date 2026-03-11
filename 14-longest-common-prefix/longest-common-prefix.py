@@ -4,9 +4,15 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        for i in range(len(strs[0])):
+        if not strs:
+            return ""
+
+        min_len = min(len(s) for s in strs)
+
+        for i in range(min_len):
             for j in range(1, len(strs)):
-                if i >= len(strs[j]) or strs[j][i] != strs[0][i]:
+                if strs[j][i] != strs[0][i]:
                     return strs[0][:i]
-        return strs[0]
+
+        return strs[0][:min_len]
         
