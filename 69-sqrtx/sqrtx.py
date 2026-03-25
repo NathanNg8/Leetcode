@@ -17,7 +17,7 @@ class Solution(object):
             if square == x:
                 return mid
             elif square < x:
-                ans = mid  # store possible answer
+                ans = mid  
                 left = mid + 1
             else:
                 right = mid - 1
